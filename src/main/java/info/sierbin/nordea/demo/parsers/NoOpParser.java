@@ -9,10 +9,16 @@ import org.springframework.stereotype.Service;
 public class NoOpParser implements Parser {
 
     @Override
+    public ParserType getType() {
+        return ParserType.NOOP;
+    }
+
+    @Override
     public void parse(
         final InputStream inputStream,
         final OutputStream outputStream
     ) throws IOException {
         outputStream.write(inputStream.readAllBytes());
     }
+
 }

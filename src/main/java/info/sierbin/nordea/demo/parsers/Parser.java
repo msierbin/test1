@@ -9,4 +9,6 @@ public interface Parser {
         InputStream inputStream,
         OutputStream outputStream
     ) throws IOException;
+
+    ParserType getType();
 }
