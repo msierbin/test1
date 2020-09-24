@@ -24,13 +24,13 @@ public class RemoveObsoleteCharsParser implements Parser {
         int data;
         while((data = inputStream.read()) != -1) {
             if ((data == ' ' || data == '\t')) {
-                if (wasPreviousSpace) {
+                if (wasPreviousSpace || previousData == '\n') {
                     // do not propagate duplicated spaces / tabs
                 } else {
                     outputStream.write(' ');
                 }
                 wasPreviousSpace = true;
-            } else if (data == ',' || data == ';' || data == '\'' || data == '"' || data == '-') {
+            } else if (data == ',' || data == ';' || data == ':' || data == '\'' || data == '"' || data == '-') {
                 if (wasPreviousSpace) {
                     // do not propagate duplicated spaces / tabs
                 } else {

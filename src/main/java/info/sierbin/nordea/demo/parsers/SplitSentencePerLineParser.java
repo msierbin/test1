@@ -18,13 +18,19 @@ public class SplitSentencePerLineParser implements Parser {
         final InputStream inputStream,
         final OutputStream outputStream
     ) throws IOException {
+        boolean previousNewLine = false;
+
         int data;
         while((data = inputStream.read()) != -1) {
-            if (data != '\n') {
-                outputStream.write(data);
-            }
             if (data == '.' || data == '!' || data == '?') {
                 outputStream.write('\n');
+                previousNewLine = true;
+            } else if (data == ' ' && previousNewLine) {
+                // skip space
+                previousNewLine = false;
+            } else if (data != '\n') {
+                outputStream.write(data);
+                previousNewLine = false;
             }
         }
     }

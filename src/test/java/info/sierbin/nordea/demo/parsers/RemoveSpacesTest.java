@@ -43,8 +43,8 @@ class RemoveSpacesTest {
 
 		// then
 		final String out = outputProvider.getOut();
-		Assertions.assertEquals("What he shouted was shocking: 停在那儿 你这肮脏的掠夺者! I couldn t understand a word perhaps because Chinese \n" +
-			" isn t my mother tongue. I was just standing there watching Mr. Young marching around he \n" +
+		Assertions.assertEquals("What he shouted was shocking 停在那儿 你这肮脏的掠夺者! I couldn t understand a word perhaps because Chinese \n" +
+			"isn t my mother tongue. I was just standing there watching Mr. Young marching around he \n" +
 			"was furious. Why was he directing his anger at me? Little did I know about that.\n" +
 			"\n" +
 			"Nordea Markets is the leading international capital markets operator and investment banking partner in the Nordic and Baltic Sea regions.\n" +

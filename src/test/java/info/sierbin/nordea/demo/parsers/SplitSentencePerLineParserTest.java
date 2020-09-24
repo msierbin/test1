@@ -43,19 +43,19 @@ class SplitSentencePerLineParserTest {
 
 		// then
 		final String out = outputProvider.getOut();
-		Assertions.assertEquals("What\the  shouted was shocking:  停在那儿, 你这肮脏的掠夺者!\n" +
-			" I couldn't understand a word,perhaps because Chinese  isn't my mother tongue.\n" +
-			" I was just standing there watching Mr.\n" +
-			" Young marching around - he was    furious.\n" +
-			"   Why was he directing  his  anger at me?\n" +
-			" Little did I know \tabout \tthat.\n" +
-			"Nordea Markets is the leading international capital markets operator and investment banking partner in the Nordic and Baltic Sea regions.\n" +
-			"We are located next door to you , connecting you to the global markets.\n" +
-			" We combine local expertise with global strength to provide you with a complete portfolio of financial services and solutions.\n" +
-			" We have one of the strongest, most diversified product ranges in the Nordics and offer outstanding liquidity in local currencies.\n" +
-			"But more significantly, we offer you access to an unequalled team of experts ,in all facets of capital markets, dedicated to serving you in the best possible manner.\n" +
-			"At Nordea Markets we have a rare combination of local expertise and global strength which gives you, our customer, the opportunity to use us for a wide variety of financial services and solutions.\n" +
-			"In fact - in all of the Nordics, you’d have a hard time finding a product range as strong and diversified as ours (and we can give you excellent liquidity in local currencies too).\n" +
-			" But most importantly, we have a huge team of outstanding specialists ready to serve you, no matter what your financial challenge might be.\n", out);
+		Assertions.assertEquals("What\the  shouted was shocking:  停在那儿, 你这肮脏的掠夺者\n" +
+			"I couldn't understand a word,perhaps because Chinese  isn't my mother tongue\n" +
+			"I was just standing there watching Mr\n" +
+			"Young marching around - he was    furious\n" +
+			"  Why was he directing  his  anger at me\n" +
+			"Little did I know \tabout \tthat\n" +
+			"Nordea Markets is the leading international capital markets operator and investment banking partner in the Nordic and Baltic Sea regions\n" +
+			"We are located next door to you , connecting you to the global markets\n" +
+			"We combine local expertise with global strength to provide you with a complete portfolio of financial services and solutions\n" +
+			"We have one of the strongest, most diversified product ranges in the Nordics and offer outstanding liquidity in local currencies\n" +
+			"But more significantly, we offer you access to an unequalled team of experts ,in all facets of capital markets, dedicated to serving you in the best possible manner\n" +
+			"At Nordea Markets we have a rare combination of local expertise and global strength which gives you, our customer, the opportunity to use us for a wide variety of financial services and solutions\n" +
+			"In fact - in all of the Nordics, you’d have a hard time finding a product range as strong and diversified as ours (and we can give you excellent liquidity in local currencies too)\n" +
+			"But most importantly, we have a huge team of outstanding specialists ready to serve you, no matter what your financial challenge might be\n", out);
 	}
 }
