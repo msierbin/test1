@@ -18,7 +18,7 @@ class XMLParserTest {
 	@Autowired
 	private StringOutputProvider outputProvider;
 	@Autowired
-	private XMLParser xmlSentenceParser;
+	private XMLParser xmlParser;
 
 	@Test
 	public void rule1() throws IOException {
@@ -29,7 +29,7 @@ class XMLParserTest {
 			"Cinderella likes shoes..");
 
 		// when
-		this.xmlSentenceParser.parse(inputProvider.get(), outputProvider.get());
+		this.xmlParser.parse(inputProvider.get(), outputProvider.get());
 
 		// then
 		final String out = outputProvider.getOut();

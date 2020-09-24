@@ -7,6 +7,5 @@ public enum ParserType {
     XML_SENTENCE_PARSER,
     XML_PARSER,
     CSV_SENTENCE_PARSER,
-    CSV_PARSER,
-    COMBINED_XML_PARSER;
+    CSV_PARSER;
 }

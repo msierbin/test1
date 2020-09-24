@@ -22,30 +22,34 @@ public class XMLSentenceParser implements Parser {
     public void parse(
         final InputStream inputStream,
         final OutputStream outputStream
-    ) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        outputStream.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>".getBytes("UTF-8"));
-        outputStream.write('\n');
-        outputStream.write("<text>".getBytes(StandardCharsets.UTF_8));
-        outputStream.write('\n');
-        while(reader.ready()) {
-            String line = reader.readLine();
-            final String[] words = line.split("\\s");
-            Arrays.sort(words, Collator.getInstance());
-            if (words.length > 0 && words[0].length() > 0) {
-                outputStream.write("\t<sentence>".getBytes(StandardCharsets.UTF_8));
-                outputStream.write('\n');
-                for (String word : words) {
-                    outputStream.write("\t\t<word>".getBytes(StandardCharsets.UTF_8));
-                    outputStream.write(word.getBytes(StandardCharsets.UTF_8));
-                    outputStream.write("</word>".getBytes(StandardCharsets.UTF_8));
+    ) {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            outputStream.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>".getBytes("UTF-8"));
+            outputStream.write('\n');
+            outputStream.write("<text>".getBytes(StandardCharsets.UTF_8));
+            outputStream.write('\n');
+            while (reader.ready()) {
+                String line = reader.readLine();
+                final String[] words = line.split("\\s");
+                Arrays.sort(words, Collator.getInstance());
+                if (words.length > 0 && words[0].length() > 0) {
+                    outputStream.write("\t<sentence>".getBytes(StandardCharsets.UTF_8));
+                    outputStream.write('\n');
+                    for (String word : words) {
+                        outputStream.write("\t\t<word>".getBytes(StandardCharsets.UTF_8));
+                        outputStream.write(word.getBytes(StandardCharsets.UTF_8));
+                        outputStream.write("</word>".getBytes(StandardCharsets.UTF_8));
+                        outputStream.write('\n');
+                    }
+                    outputStream.write("\t</sentence>".getBytes(StandardCharsets.UTF_8));
                     outputStream.write('\n');
                 }
-                outputStream.write("\t</sentence>".getBytes(StandardCharsets.UTF_8));
-                outputStream.write('\n');
             }
+            outputStream.write("</text>".getBytes(StandardCharsets.UTF_8));
+        } catch (IOException exception) {
+            throw new RuntimeException();
         }
-        outputStream.write("</text>".getBytes(StandardCharsets.UTF_8));
     }
 
 }
