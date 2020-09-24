@@ -20,6 +20,26 @@ public class DemoApplicationAttributes {
                 "-rs".equalsIgnoreCase(arg)
             ) {
                 parserType = ParserType.REMOVE_SPACES;
+            } else if (
+                "-XML_PARSER".equalsIgnoreCase(arg) ||
+                    "-xml".equalsIgnoreCase(arg)
+            ) {
+                parserType = ParserType.XML_PARSER;
+            } else if (
+                "-CSV_PARSER".equalsIgnoreCase(arg) ||
+                    "-csv".equalsIgnoreCase(arg)
+            ) {
+                parserType = ParserType.CSV_PARSER;
+            } else if (
+                "-XML_SENTENCE_PARSER".equalsIgnoreCase(arg) ||
+                    "-xml_sentence".equalsIgnoreCase(arg)
+            ) {
+                parserType = ParserType.XML_SENTENCE_PARSER;
+            } else if (
+                "-CSV_SENTENCE_PARSER".equalsIgnoreCase(arg) ||
+                    "-csv_sentence".equalsIgnoreCase(arg)
+            ) {
+                parserType = ParserType.CSV_SENTENCE_PARSER;
             }
         }
 
