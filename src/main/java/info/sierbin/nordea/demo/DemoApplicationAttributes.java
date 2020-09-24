@@ -10,6 +10,11 @@ public class DemoApplicationAttributes {
         for (String arg : args) {
             if ("-noop".equalsIgnoreCase(arg)) {
                 parserType = ParserType.NOOP;
+            } else if (
+                "-SENTENCE_SPLITTER".equalsIgnoreCase(arg) ||
+                "-ss".equalsIgnoreCase(arg)
+            ) {
+                parserType = ParserType.SENTENCE_SPLITTER;
             }
         }
 
