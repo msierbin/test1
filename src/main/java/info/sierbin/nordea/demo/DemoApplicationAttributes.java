@@ -15,6 +15,11 @@ public class DemoApplicationAttributes {
                 "-ss".equalsIgnoreCase(arg)
             ) {
                 parserType = ParserType.SENTENCE_SPLITTER;
+            } else if (
+                "-REMOVE_SPACES".equalsIgnoreCase(arg) ||
+                "-rs".equalsIgnoreCase(arg)
+            ) {
+                parserType = ParserType.REMOVE_SPACES;
             }
         }
 
